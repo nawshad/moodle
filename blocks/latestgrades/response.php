@@ -6,6 +6,7 @@ global $DB;
 
 $courseid = $_POST['course_id'];
 $userid=$_POST['user_id'];
+$display_string = '';
 
 $latestgrades = $DB->get_records_sql('
     SELECT mgi.itemname as name, (mgg.finalgrade/mgi.grademax)*100 as grade

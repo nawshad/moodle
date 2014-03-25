@@ -22,7 +22,8 @@ class block_latestgrades extends block_base {
             $this->content->text   = '';
             return $this->content;
         }
-        
+           
+        $PAGE->requires->js( new moodle_url($root. '/blocks/latestgrades/jquery-1.11.0.min.js'));
         $PAGE->requires->js( new moodle_url($root. '/blocks/latestgrades/ajaxTable.js'));
         $courses = $DB->get_records_sql ('
                             SELECT mc.id, mc.fullname, mgi.timemodified 
