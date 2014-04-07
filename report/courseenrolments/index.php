@@ -26,10 +26,10 @@
 require('../../config.php');
 //require_once($CFG->dirroot.'/lib/tablelib.php');
 
-define('DEFAULT_PAGE_SIZE', 20);
-define('SHOW_ALL_PAGE_SIZE', 5000);
+//define('DEFAULT_PAGE_SIZE', 20);
+//define('SHOW_ALL_PAGE_SIZE', 5000);
 
-$id         = required_param('id', PARAM_INT); // course id.
+$id  = required_param('id', PARAM_INT); // course id.
 
 $url = new moodle_url('/report/courseenrolments/index.php', array('id'=>$id));
 
@@ -40,13 +40,12 @@ if (!$course = $DB->get_record('course', array('id'=>$id))) {
     print_error('invalidcourse');
 }
 
-
 require_login($course);
-//$context = context_course::instance($course->id);
-//require_capability('report/courseenrolments:view', $context);
+$context = context_course::instance($course->id);
+require_capability('report/courseenrolments:view', $context);
 
-$strparticipation = get_string('courseenrolmentsreport', 'report_courseenrolments');
-$PAGE->set_title($course->shortname .': '. $strparticipation);
+$strenrolments = get_string('courseenrolmentsreport', 'report_courseenrolments');
+$PAGE->set_title($course->shortname .': '. $strenrolments);
 $PAGE->set_heading($course->fullname);
 echo $OUTPUT->header();
 
