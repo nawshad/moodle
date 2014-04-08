@@ -15,24 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Participation report
+ * Course Enrolment report
  *
  * @package    report
- * @subpackage participation
+ * @subpackage courseenrolments
  * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require('../../config.php');
-//require_once($CFG->dirroot.'/lib/tablelib.php');
-
-//define('DEFAULT_PAGE_SIZE', 20);
-//define('SHOW_ALL_PAGE_SIZE', 5000);
 
 $id  = required_param('id', PARAM_INT); // course id.
-
 $url = new moodle_url('/report/courseenrolments/index.php', array('id'=>$id));
-
 $PAGE->set_url($url);
 $PAGE->set_pagelayout('admin');
 
@@ -46,10 +40,37 @@ require_capability('report/courseenrolments:view', $context);
 
 $strenrolments = get_string('courseenrolmentsreport', 'report_courseenrolments');
 $PAGE->set_title($course->shortname .': '. $strenrolments);
-$PAGE->set_heading($course->fullname);
+$PAGE->set_heading($course->fullname.': Enrolled Users');
+
+
+$enrolledusers = $DB->get_records_sql('SELECT mu.id AS id, mu.firstname, mu.lastname, mu.email
+                                        FROM mdl_role_assignments mra, mdl_user mu, mdl_course mc, mdl_context mcxt
+                                        WHERE mra.userid = mu.id
+                                        AND mra.contextid = mcxt.id
+                                        AND mcxt.contextlevel =50
+                                        AND mcxt.instanceid = mc.id
+                                        AND mc.id =?
+                                        AND (mra.roleid =5 OR mra.roleid=3)', array(2));
+
+
+
+$strfirstname = get_string('firstname', 'report_courseenrolments');
+$strlastname = get_string('lastname', 'report_courseenrolments');
+$stremail = get_string('email', 'report_courseenrolments');
+
+$table = new html_table();
+$table->head  = array($strfirstname, $strlastname, $stremail);
+$table->colclasses = array('mdl-left firstname', 'mdl-left lastname', 'mdl-left email');
+$table->attributes = array('class' => 'courseenrolmentsreport generaltable');
+$table->id = 'courseenrolmentsreporttable';
+$table->data = array();
+
+foreach ($enrolledusers as $enrolleduser){
+    $table->data[] = array($enrolleduser->firstname, $enrolleduser->lastname, $enrolleduser->email);
+}
+
 echo $OUTPUT->header();
-
-
+echo html_writer::table($table);
 echo $OUTPUT->footer();
 
 

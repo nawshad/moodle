@@ -18,8 +18,8 @@
  * Post installation and migration code.
  *
  * @package    report
- * @subpackage participation
- * @copyright  2011 Petr Skoda {@link http://skodak.org}
+ * @subpackage courseenrolments
+ * @copyright  2014 Nawshad Farruque 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

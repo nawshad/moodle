@@ -18,13 +18,14 @@
  * Lang strings
  *
  * @package    report
- * @subpackage participation
+ * @subpackage courseenrolments
  * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['courseenrolments:view'] = 'View course enrolments report';
 $string['courseenrolmentsreport'] = 'Enrolments';
-$string['page-report-courseenrolments-x'] = 'Any participation report';
-$string['page-report-courseenrolments-index'] = 'Course participation report';
+$string['firstname'] = 'First Name';
+$string['lastname'] = 'Last Name';
+$string['email'] = 'E-mail';
 $string['pluginname'] = 'Course Enrolments';

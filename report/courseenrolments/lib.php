@@ -18,8 +18,8 @@
  * This file contains functions used by the participation report
  *
  * @package    report
- * @subpackage participation
- * @copyright  2009 Sam Hemelryk
+ * @subpackage courseenrolments
+ * @copyright  2014 Nawshad Farruque
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -38,21 +38,4 @@ function report_courseenrolments_extend_navigation_course($navigation, $course, 
         $url = new moodle_url('/report/courseenrolments/index.php', array('id'=>$course->id));
         $navigation->add(get_string('pluginname', 'report_courseenrolments'), $url, navigation_node::TYPE_SETTING, null, null, new pix_icon('i/report', ''));
     }
-}
-
-/**
- * Return a list of page types
- * @param string $pagetype current page type
- * @param stdClass $parentcontext Block's parent context
- * @param stdClass $currentcontext Current context of block
- * @return array
- */
-function report_courseenrolments_page_type_list($pagetype, $parentcontext, $currentcontext) {
-    $array = array(
-        '*'                          => get_string('page-x', 'pagetype'),
-        'report-*'                   => get_string('page-report-x', 'pagetype'),
-        'report-participation-*'     => get_string('page-report-participation-x',  'report_participation'),
-        'report-participation-index' => get_string('page-report-participation-index',  'report_participation'),
-    );
-    return $array;
 }
