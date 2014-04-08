@@ -49,7 +49,6 @@ $PAGE->set_title($course->shortname .': '. $strenrolments);
 $PAGE->set_heading($course->fullname);
 echo $OUTPUT->header();
 
-echo 'Hello World';
 
 echo $OUTPUT->footer();
 
