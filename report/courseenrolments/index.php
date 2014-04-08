@@ -50,7 +50,7 @@ $enrolledusers = $DB->get_records_sql('SELECT mu.id AS id, mu.firstname, mu.last
                                         AND mcxt.contextlevel =50
                                         AND mcxt.instanceid = mc.id
                                         AND mc.id =?
-                                        AND (mra.roleid =5 OR mra.roleid=3)', array(2));
+                                        AND (mra.roleid =5 OR mra.roleid=3)', array($id));
 
 
 
