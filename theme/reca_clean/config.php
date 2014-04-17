@@ -35,7 +35,6 @@ $THEME->name = 'reca_clean';
 // in version.php and lang/en/theme_clean.php as well.
 //////////////////////////////////
 //
-
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('custom');
