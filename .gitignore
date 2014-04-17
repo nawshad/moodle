@@ -33,4 +33,3 @@ composer.lock
 /behat.yml
 */yui/build/*/*-coverage.js
 /lib/yuilib/*/build/*/*-coverage.js
-theme/reca_clean/config.php
