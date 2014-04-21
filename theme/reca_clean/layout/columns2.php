@@ -31,7 +31,12 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?>">
+<header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?>">   
+   <div id = "logo_c2" class = "logo">
+        <div class = "img_row1"><img src="<?php echo $OUTPUT->pix_url('splash_r1_c1','theme')?>"  alt="Moodle logo" /></div>
+        <div class = "img_row2"><img src="<?php echo $OUTPUT->pix_url('splash_r2_c1','theme')?>"  alt="Moodle logo" /></div>
+        <div class = "img_row3"><img src="<?php echo $OUTPUT->pix_url('splash_r3_c1','theme')?>"  alt="Moodle logo" /></div>
+    </div>
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>

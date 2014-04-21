@@ -40,7 +40,7 @@ if (right_to_left()) {
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <title><?php echo $OUTPUT->page_title();?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,15 +49,20 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-
-<header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?>">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
+    
+<header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?>">   
+    <div id = "logo_c2" class = "logo">
+        <div class = "img_row1"><img src="<?php echo $OUTPUT->pix_url('splash_r1_c1','theme')?>"  alt="Moodle logo" /></div>
+        <div class = "img_row2"><img src="<?php echo $OUTPUT->pix_url('splash_r2_c1','theme')?>"  alt="Moodle logo" /></div>
+        <div class = "img_row3"><img src="<?php echo $OUTPUT->pix_url('splash_r3_c1','theme')?>"  alt="Moodle logo" /></div>
+    </div>
+    <nav role="navigation" class="navbar-inner">    
+        <div class="container-fluid"> 
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
             <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar">Item 1</span>
+                <span class="icon-bar">Item 2</span>
+                <span class="icon-bar">Item 3</span>
             </a>
             <div class="nav-collapse collapse">
                 <?php echo $OUTPUT->custom_menu(); ?>
@@ -71,7 +76,6 @@ echo $OUTPUT->doctype() ?>
 </header>
 
 <div id="page" class="container-fluid">
-
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
@@ -102,12 +106,13 @@ echo $OUTPUT->doctype() ?>
     <footer id="page-footer">
         <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
         <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-        <?php
+        <?php      
         echo $html->footnote;
         echo $OUTPUT->login_info();
         echo $OUTPUT->home_link();
         echo $OUTPUT->standard_footer_html();
         ?>
+       <div id = "footer_row"><img src="<?php echo $OUTPUT->pix_url('splash_r9_c1','theme')?>"  alt="Moodle logo" /></div>    
     </footer>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
