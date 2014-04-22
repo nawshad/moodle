@@ -15,6 +15,11 @@ a.logo {
     display: block;
     float: right;
 }
+.logo{
+   position: relative;
+   top: -8px;
+   left: -10px;
+}
 
 /* Custom CSS Settings
 -------------------------*/

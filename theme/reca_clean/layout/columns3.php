@@ -49,12 +49,6 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
- <div id = "logo_c2" class = "logo">
-        <div class = "img_row1"><img src="<?php echo $OUTPUT->pix_url('splash_r1_c1','theme')?>"  alt="Moodle logo" /></div>
-        <div class = "img_row2"><img src="<?php echo $OUTPUT->pix_url('splash_r2_c1','theme')?>"  alt="Moodle logo" /></div>
-        <div class = "img_row3"><img src="<?php echo $OUTPUT->pix_url('splash_r3_c1','theme')?>"  alt="Moodle logo" /></div>
- </div>
-    
 <header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?>">    
     <nav role="navigation" class="navbar-inner">    
         <div class="container-fluid"> 
@@ -77,6 +71,12 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
+        <div id = "logo_c3" class = "logo">
+            <div class = "img_row1"><img src="<?php echo $OUTPUT->pix_url('splash_r1_c1','theme')?>"  alt="Moodle logo" /></div>
+            <div class = "img_row2"><img src="<?php echo $OUTPUT->pix_url('splash_r2_c1','theme')?>"  alt="Moodle logo" /></div>
+            <div class = "img_row3"><img src="<?php echo $OUTPUT->pix_url('splash_r3_c1','theme')?>"  alt="Moodle logo" /></div>
+        </div>
+    
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
@@ -112,11 +112,9 @@ echo $OUTPUT->doctype() ?>
         echo $OUTPUT->home_link();
         echo $OUTPUT->standard_footer_html();
         ?>
-       <div id = "footer_row"><img src="<?php echo $OUTPUT->pix_url('splash_r9_c1','theme')?>"  alt="Moodle logo" /></div>    
     </footer>
-
+    <div class = "footer_image"><img src="<?php echo $OUTPUT->pix_url('bottombar','theme')?>"  alt="Moodle logo" /></div>  
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
 </div>
 </body>
 </html>
