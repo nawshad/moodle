@@ -1,26 +1,152 @@
 /* Custom CSS
 -------------------------*/
-a.logo {
-    background: url([[setting:logo]]) no-repeat 0 0;
-    display: block;
+
+/*Navbar styles*/
+.navbar .navbar-inner .container-fluid{
+   background-color: #223059;
+  
+}
+
+.navbar .navbar-inner .container-fluid .brand{
+       color: white;
+       font-family: Helvetica;
+       font-weight: normal;
+}
+
+li.navbar-text .logininfo a:link,
+#page-footer a:visited  {
+    color: #aaa;
+    text-decoration: none;
+}
+li.navbar-text .logininfo a:hover,
+li.navbar-text .logininfo a:active {
+    color: #c30;
+    text-decoration: none;
+}
+
+/*Logo styles*/
+.logo img{
+     width: 300px;
+}
+
+/*Block Styles*/
+.block {
+    background-color: #223059;
+}
+ 
+.block .header .title {
+    color: #FFF;
+}
+
+.block .header h2 {
+    color: #FFF;
+}
+ 
+.block .header .title .block_action input {
+    background-color: #FFF;
+}
+ 
+.block .content {
+    border: 1px solid #000;
+    padding: 5px;
+    background-color: #FFF;
+}
+ 
+.block .content .block_tree p {
+    font-size: 80%;
+}
+
+.block_settings_navigation_tree .content .footer {
+    text-align: center;
+}
+ 
+.block_settings_navigation_tree .content .footer .adminsearchform {
+    margin-left: 5%;
+    width: 90%;
+    font-size: 9pt;
+}
+ 
+.block_settings_navigation_tree .content .footer .adminsearchform #adminsearchquery {
+    width: 95%;
+}
+ 
+.block_calendar_month .content .calendar-controls a {
+    color: #223059;
+    font-weight: bold;
+}
+ 
+.block_calendar_month .content .minicalendar td {
+    border-color: #FFF;
+}
+ 
+.block_calendar_month .content .minicalendar .day {
+    /*color: #FFF;
+    background-color: #223059;*/
+}
+ 
+.block_calendar_month .content .minicalendar .day a {
+    color: #FFF000;
+    font-weight: bold;
+}
+ 
+.block_calendar_month .content .minicalendar .weekdays th {
+    border-width: 0;
+    font-weight: bold;
+    color: #223059;
+}
+ 
+.block_calendar_month .content .minicalendar .weekdays abbr {
+    border-width: 0;
+    text-decoration: none;
+}
+
+
+/*page footer styles*/
+#page-footer {
+   /* background: #fff url([[pix:theme|core/h2grad]]) repeat-x left top;*/
+    background-color: #223059;
+    height: auto;
+    clear: both;
     float: left;
-    height: 75px;
+    width: 98%;
+    margin: 0;
+    padding: 1%;
+    color: #4b4b4b;
+    border-top: 1px solid #fff;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+/*#page-footer a{
+  position: relative;
+  left: -150px;
+}*/
+
+#page-footer a:link,
+#page-footer a:visited  {
+    color: #aaa;
+    text-decoration: none;
+}
+#page-footer a:hover,
+#page-footer a:active {
+    color: #c30;
+    text-decoration: none;
+}
+#page-footer .footer-left {
+    position: relative;
+    float: left;
+    text-align: left;
+    color: #999;
+}
+#page-footer .footer-left p {
     margin: 0;
     padding: 0;
-    width: 100%;
+    font-size: 100%;
+    line-height: 1;
 }
-
-.dir-rtl a.logo {
-    background: url([[setting:logo]]) no-repeat 100% 0;
-    display: block;
+#page-footer .footer-right {
     float: right;
-}
-.logo{
-   position: relative;
-   top: -8px;
-   left: -10px;
+    text-align: right;
 }
 
-/* Custom CSS Settings
--------------------------*/
-[[setting:customcss]]
+

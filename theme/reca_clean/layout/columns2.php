@@ -54,9 +54,7 @@ echo $OUTPUT->doctype() ?>
 <div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
         <div id = "logo_c2" class = "logo">
-            <div class = "img_row1"><img src="<?php echo $OUTPUT->pix_url('splash_r1_c1','theme')?>"  alt="Moodle logo" /></div>
-            <div class = "img_row2"><img src="<?php echo $OUTPUT->pix_url('splash_r2_c1','theme')?>"  alt="Moodle logo" /></div>
-            <div class = "img_row3"><img src="<?php echo $OUTPUT->pix_url('splash_r3_c1','theme')?>"  alt="Moodle logo" /></div>
+            <div class = "img_div"><img src="<?php echo $OUTPUT->pix_url('reca_logo','theme')?>"  alt="Moodle logo" /></div>
         </div>
         <div id="page-navbar" class="clearfix">
             <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
@@ -86,15 +84,21 @@ echo $OUTPUT->doctype() ?>
     </div>
 
     <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-        <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-        <?php
-        echo $html->footnote;
-        echo $OUTPUT->login_info();
-        echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>  
-    </footer>
+        <div class="footer-left">
+              <a href="http://moodle.org" title="Moodle">
+                <img src="<?php echo $OUTPUT->pix_url('moodle-logo','theme')?>" alt="Moodle logo" />
+              </a>                   
+        </div>
+        <?php if ($hasfootnote) { ?>
+                    
+        <?php } ?> 
+
+        <div class="footer-right">
+            <?php echo $OUTPUT->login_info();?>
+           
+        </div>
+        <?php echo $OUTPUT->standard_footer_html(); ?>
+    </footer>  
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
