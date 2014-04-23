@@ -29,6 +29,10 @@ li.navbar-text .logininfo a:active {
      width: 300px;
 }
 
+#frontpage-course-list {
+    color: #223059;
+}
+
 /*Block Styles*/
 .block {
     background-color: #223059;
