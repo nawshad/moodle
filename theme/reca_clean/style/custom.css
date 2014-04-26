@@ -8,25 +8,29 @@
 }
 
 .navbar .navbar-inner .container-fluid .brand{
-       color: white;
+       color: #D28F20;
        font-family: Helvetica;
        font-weight: normal;
 }
 
-li.navbar-text .logininfo a:link,
-#page-footer a:visited  {
-    color: #aaa;
+/*li.navbar-text .logininfo*/ a:link,
+/*li.navbar-text .logininfo*/ a:visited {
+    color: #D28F20;
     text-decoration: none;
 }
-li.navbar-text .logininfo a:hover,
-li.navbar-text .logininfo a:active {
-    color: #c30;
+/*li.navbar-text .logininfo*/ a:hover,
+/*li.navbar-text .logininfo*/ a:active {
+    color: #0077B3;
     text-decoration: none;
 }
 
 /*Logo styles*/
+.logo{
+    width: 300px;
+ }
+
 .logo img{
-     width: 300px;
+     max-width: 100%;
 }
 
 #frontpage-course-list {
@@ -35,7 +39,7 @@ li.navbar-text .logininfo a:active {
 
 /*Block Styles*/
 .block {
-    background-color: #223059;
+    background-color:#223059;
 }
  
 .block .header .title {
@@ -43,21 +47,21 @@ li.navbar-text .logininfo a:active {
 }
 
 .block .header h2 {
-    color: #FFF;
+    color:  #D28F20;
 }
  
 .block .header .title .block_action input {
-    background-color: #FFF;
+    background-color: #223059;
 }
  
 .block .content {
-    border: 1px solid #000;
+    border: 0px;
     padding: 5px;
     background-color: #FFF;
 }
  
 .block .content .block_tree p {
-    font-size: 80%;
+    font-size: 100%;
 }
 
 .block_settings_navigation_tree .content .footer {
@@ -89,7 +93,7 @@ li.navbar-text .logininfo a:active {
 }
  
 .block_calendar_month .content .minicalendar .day a {
-    color: #FFF000;
+    color: #D28F20;
     font-weight: bold;
 }
  
@@ -126,16 +130,16 @@ li.navbar-text .logininfo a:active {
   left: -150px;
 }*/
 
-#page-footer a:link,
+/*#page-footer a:link,
 #page-footer a:visited  {
-    color: #aaa;
+    color: #D28F20;
     text-decoration: none;
 }
 #page-footer a:hover,
 #page-footer a:active {
-    color: #c30;
+    color:#0077B3;
     text-decoration: none;
-}
+}*/
 #page-footer .footer-left {
     position: relative;
     float: left;
