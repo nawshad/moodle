@@ -7,14 +7,14 @@
 
 
 /* REVISION 1 */
-.homeicon {
+/*.homeicon {
 	height: 42px;
 	width: 58px;
 }
 .homeiconlink {
 	padding: 0!important;
 	padding-bottom: 0px!important;
-}
+}*/
 li.home_item{
     padding-right: 8px;
     color: black;
@@ -23,9 +23,9 @@ li.home_item{
 
 p,h1,h2,h3,h4,h5,h6 { margin-bottom: 15px; font-weight: 400!important; } 
 	
-	h6,p {font-family: Helvetica, Arial, sans-serif;}
+	h6,p {font-family:  sans-serif, Helvetica, Arial;}
 	
-	h1,h2,h3,h4,h5,p.paragraphLead {font-family: Oswald;}
+	h1,h2,h3,h4,h5,p.paragraphLead {font-family: sans-serif;}
 
 	h1 { 
 		font-size: 2.5em /* 40 / 16 */;
@@ -56,21 +56,21 @@ p,h1,h2,h3,h4,h5,h6 { margin-bottom: 15px; font-weight: 400!important; }
 		font-size: 1.125em /* 18 / 16 */;
 		line-height: 1.11111111111em;/* 20 / 18 */
 		} 
-	a {color: #155abf; cursor: pointer; font-weight: 100;}
+	a {color: #223059; cursor: pointer; font-weight: 100;}
 	a:link, a:visited, a:active {text-decoration: none;}
-	a:hover {color: #ff6600;}
+	a:hover {color:#D28F20;}
 
 body {
 	color:#000;
 	font-size: 14px;
-	font-family: Arial,Helvetica,sans-serif;
+	font-family: sans-serif, Arial, Helvetica;
 	background-color: #FFF;
 	padding-top: 0px!important;
 	padding: 0!important;
 }
-.block .header .title h2, .block h3.main {
+/*.block .header .title h2, .block h3.main {
     color: #FCB816;
-}
+}*/
 
 .loginstripe {
 	height: 30px;
@@ -89,10 +89,6 @@ body {
     float: right;
     margin-top: 80px;
     position: relative;
-    //left: 60px;
-    /*background: url([[pix:theme|menu_background]]) repeat-x #000000 ;
-    color: #000000;
-    height: 20px;*/
 }
 
 .logo_holder{
@@ -122,6 +118,7 @@ body {
 .top_stripe a:hover{
 	color: #D28F20;
 }
+
 /*
 									NAVIGATION BAR
 --------------------------------------------------------------------------------------*/
@@ -279,14 +276,6 @@ body {
 	margin-top: 0!important;
 }
 
-#page-navbar > ul.breadcrumb > li > a{
-    color: #223059;
-}
-
-#page-navbar > ul.breadcrumb > li > a:hover{
-    color: #D28F20;
-}
-
 @media (max-width: 979px) {
 	#page {
 		margin-top: 0px!important;
@@ -332,6 +321,7 @@ body {
 .breadcrumb > li {
     text-shadow:none;
 }
+
 /*------------------------------------------------------------------------------------*/
 /* BLOCK */
 .block {
@@ -382,17 +372,12 @@ hr {
 /*-----------------------------------------------------------------------------------*/
 /*Front Page Course List*/
 #frontpage-course-list h2{
-    color: #223059;
+    color: #000000;
 }
 
-/*.info > h3.name a{
-    color:  #223059;
-}*/
-
-.info > h3.name a:hover{
+/*.coursebox > .info > h3.name a:hover{
     color:  #D28F20;
-}
-
+}*/
 
 /*------------------------------------------------------------------------------------*/
 /* MAIN REGION */
@@ -433,6 +418,52 @@ td {
 /*------------------------------------------------------------------------------------*/
 /* FOOTER */
 
+#bottom_bar{
+    position: relative;
+    top: 20px;
+    background-color: #384469;
+    height: 4px;
+}
+
+#page-footer  a{
+    color: #777777;
+}
+
+#page-footer a:hover{
+    color: #D28F20;
+}
+
+#page-footer .logininfo{
+    color: #ffffff;
+}
+
+
+.footnote{
+    color:#FFFFFF;
+}
+
+#page-footer{
+    background: #223059;
+    background: -moz-linear-gradient(bottom,  #223059 60%, #000000  100%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(60%,#223059), color-stop(100%,#000000));
+    background: -webkit-linear-gradient(bottom,  #223059 60%,#000000 100%);
+    background: -o-linear-gradient(bottom,  #223059 60%,#000000 100%);
+    background: -ms-linear-gradient(bottom,  #223059 60%,#000000 100%);
+    background: linear-gradient(to top,  #223059 60%,#000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#223059', endColorstr='#000000',GradientType=0);
+}
+
+#common_links{
+    color: #777777;
+}
+
+#common_links a{
+   color: #777777;
+}
+
+#common_links a:hover{
+    color: #D28F20;
+}
 /*------------------------------------------------------------------------------------*/
 /* COLUMNS*/
 @media(max-width:767px) {
@@ -459,68 +490,6 @@ td {
 /* PANEL */
 .user-enroller-panel {
     z-index:10020;
-}
-
-/*Footer*/
-
-#bottom_bar{
-    position: relative;
-    top: 20px;
-    background-color: #384469;
-    height: 4px;
-}
-
-p.helplink{
-    width: 150px;
-    position:relative;
-    margin:0 auto;
-    clear:left;
-    height:auto;
-    z-index: 0;
-    text-align:center
-}
-
-.footnote{
-    color: #D28F20;
-   // width: 500px;
-    /*float: left;
-    position: relative;
-    top: -35px;*/
-}
-
-/*#page-footer .logininfo{
-    max-width: 100%;
-    padding-right: 500px;
-    /*position: relative;
-    left: -250px;
-}*/
-
-/*#page-footer .homelink{
-    max-width: 100%;
-    padding-right: 500px;
-    /*position: relative;
-    left: -250px;
-}*/
-
-#page-footer{
-    background: #223059;
-    background: -moz-linear-gradient(bottom,  #223059 60%, #000000  100%);
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(60%,#223059), color-stop(100%,#000000));
-    background: -webkit-linear-gradient(bottom,  #223059 60%,#000000 100%);
-    background: -o-linear-gradient(bottom,  #223059 60%,#000000 100%);
-    background: -ms-linear-gradient(bottom,  #223059 60%,#000000 100%);
-    background: linear-gradient(to top,  #223059 60%,#000000 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#223059', endColorstr='#000000',GradientType=0);
-}
-
-#page-footer a:hover{
-    color: #D28F20;
-}
-
-#common_links{
-    //float: right;
-    //width: 370px;
-    color: #D28F20;
 }
 
 /* Custom CSS Settings
