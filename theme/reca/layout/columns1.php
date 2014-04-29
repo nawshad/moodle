@@ -34,34 +34,32 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<header role="banner" class="navbar <?php echo $html->navbarclass ?>">
+<header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
         <div class="loginstripe">
             <div class="container-fluid top_stripe"><?php echo $OUTPUT->login_info() ?></div>
         </div>
-        <div class="container-fluid">
+        <div class="bluestripe"></div>
+        <div class="container-fluid logo_holder">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $global_logo; ?></a>
-            <?php if ($hascustommenu) { ?>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <?php } ?>            
+                <?php if ($hascustommenu) { ?>
+                    <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div class="navbar topmenu">
+                        <div class="container-fluid reca_custom_menu">
+                            <div class="nav-collapse collapse">                                
+                                <?php echo $OUTPUT->custom_menu(); ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>            
         </div>
     </nav>
-
-    <?php if ($hascustommenu) { ?>
-    <div class="navbar topmenu">
-        <div class="container-fluid">
-            <div class="nav-collapse collapse">                                
-                <?php echo $OUTPUT->custom_menu(); ?>
-            </div>
-        </div>
-    </div>
-    <?php } ?>
 </header>
-
+    
 <div id="page" class="container-fluid">
 
     <header id="page-header" class="clearfix">
@@ -85,18 +83,22 @@ echo $OUTPUT->doctype() ?>
         </section>
     </div>
 
-    <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-        <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-        <?php
-        echo $html->footnote;
-        echo $OUTPUT->login_info();
-        echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>
-    </footer>
+    <div id ="page-footer-div">
+        <div id="bottom_bar"></div> 
+        <footer id="page-footer">
+            <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
+            <div id="common_links"><?php echo "<a href>Home</a> | <a href>Contact</a> | <a href>Links</a> | <a href>Careers</h> | <a href>Privacy</a> | <a href>Terms of Use</a>" ?></div>
+            <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
+            <?php
+            echo $html->footnote;
+            echo $OUTPUT->login_info();
+            echo $OUTPUT->home_link();
+            echo $OUTPUT->standard_footer_html();
+            ?>
+        </footer>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
+        <?php echo $OUTPUT->standard_end_of_body_html() ?>
+    </div>
 
 </div>
 </body>

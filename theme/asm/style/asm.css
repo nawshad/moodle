@@ -15,10 +15,6 @@
 	padding: 0!important;
 	padding-bottom: 0px!important;
 }
-li.home_item{
-    padding-right: 8px;
-    color: black;
-}
 /* END OF REVISION*/
 
 p,h1,h2,h3,h4,h5,h6 { margin-bottom: 15px; font-weight: 400!important; } 
@@ -60,6 +56,8 @@ p,h1,h2,h3,h4,h5,h6 { margin-bottom: 15px; font-weight: 400!important; }
 	a:link, a:visited, a:active {text-decoration: none;}
 	a:hover {color: #ff6600;}
 
+
+
 body {
 	color:#000;
 	font-size: 14px;
@@ -72,44 +70,12 @@ body {
     color: #FCB816;
 }
 
-.loginstripe {
+.bluestipe {
 	height: 30px;
 	width: 100%;
-	background-color: #223059;
+	background-color: #000000;
 	text-align: right;
 }
-
-.bluestripe{
-   height: 5px; 
-   width: 100%;
-   background-color: #384469;
-}
-
-.topmenu{
-    float: right;
-    margin-top: 80px;
-    position: relative;
-    //left: 60px;
-    /*background: url([[pix:theme|menu_background]]) repeat-x #000000 ;
-    color: #000000;
-    height: 20px;*/
-}
-
-.logo_holder{
-    background: #ffffff;
-    background: -moz-linear-gradient(top,  #ffffff 60%, #AEB5BF 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#ffffff), color-stop(100%,#AEB5BF));
-    background: -webkit-linear-gradient(top,  #ffffff 60%,#AEB5BF 100%);
-    background: -o-linear-gradient(top,  #ffffff 60%,#AEB5BF 100%);
-    background: -ms-linear-gradient(top,  #ffffff 60%,#AEB5BF 100%);
-    background: linear-gradient(to bottom,  #ffffff 60%,#AEB5BF 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#AEB5BF',GradientType=0);
-}
-
- .logo_holder img {
-    width: 280px;
- }
-
 .top_stripe {
 	padding-top: 5px;
 	padding-right: 20px;
@@ -120,7 +86,7 @@ body {
 	color: #777777;
 }
 .top_stripe a:hover{
-	color: #D28F20;
+	color: #155abf;
 }
 /*
 									NAVIGATION BAR
@@ -136,18 +102,18 @@ body {
     background: none;
     color: #CCC;
     background-color: #2d2d2d;
-    border:none;
-    filter:none;
-    border-radius: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+	border:none;
+	filter:none;
+	border-radius: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 .navbar .nav {
-    margin-left:0px;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 0.9em;
+	margin-left:0px;
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
     font-weight: 400;
-    padding: 0 0px;
+	padding: 0 0px;
 
 }
 .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
@@ -159,15 +125,14 @@ body {
 }
 .navbar .nav>li>a {
     text-shadow: none;
-    color: #000;
-    background: url([[pix:theme|menu_background_separator]]) no-repeat;
-    padding: 0 8px;
+	color: #FFF;
+	background: url([[pix:theme|menu_background_separator]]) no-repeat;	
 }
 .navbar .nav>li>a:hover {
-    color: #D28F20;//rgb(95,184,255); 
+    color: rgb(95,184,255); 
 }
 .navbar .nav>li>a:focus {
-    color: #D28F20;//rgb(95,184,255);
+    color: rgb(95,184,255);
 }
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
     background: none;
@@ -202,7 +167,7 @@ body {
 				--------------------------------------------------------------------------------------*/
 				.dropdown-menu {
 					background-clip: padding-box;
-					background-color: #FFF;
+					background-color: #000;
 					border: 0px solid rgba(0, 0, 0, 0.2);
 					border-bottom:none;
 					border-left:none;
@@ -216,7 +181,7 @@ body {
 					
 				}				
 				.dropdown-menu > li > a {
-					color:#000;
+					color:#FFF;
 					font-weight: normal;    				
 				}
 				.dropdown-menu > li > a:hover, 
@@ -278,15 +243,6 @@ body {
 #page {
 	margin-top: 0!important;
 }
-
-#page-navbar > ul.breadcrumb > li > a{
-    color: #223059;
-}
-
-#page-navbar > ul.breadcrumb > li > a:hover{
-    color: #D28F20;
-}
-
 @media (max-width: 979px) {
 	#page {
 		margin-top: 0px!important;
@@ -294,7 +250,7 @@ body {
 		padding-right: 14px!important;
 	}
 	.topmenu {
-		margin-right: 0px!important;		
+		margin-top: 0px!important;	
 		height: auto!important;
 	}		
 	.navbar-fixed-top {
@@ -311,15 +267,22 @@ body {
 	.nav-collapse .dropdown-menu a,
 	.nav-collapse .nav > li > a:hover, 
 	.nav-collapse .dropdown-menu a:hover {
-		background:none;
+         background:none;
 	}
 }
-/*.topmenu {
+.topmenu {
 	background: url([[pix:theme|menu_background]]) repeat-x #000000 ;
-        color: #000000;
-	height: 20px;
-        
-}*/
+	height: 47px;
+        position: relative;
+        top: -10px;
+         
+}
+
+.navbar .nav-collapse > ul.nav{
+    float: right;
+    position: relative;
+    top: -50px;
+}
 
 /*------------------------------------------------------------------------------------*/
 /* BREADCRUMB */
@@ -332,11 +295,13 @@ body {
 .breadcrumb > li {
     text-shadow:none;
 }
+
+
 /*------------------------------------------------------------------------------------*/
 /* BLOCK */
 .block {
 	font-size: 13px;	
-	background-color:#EEF1F9;
+	background-color:#EEEEEE;
 	border:none;
 	padding:0px;
 	-webkit-border-radius:0px!important;
@@ -347,57 +312,41 @@ body {
 	border-bottom-right-radius: 0px!important;
 }
 .block .header .title h2, .block h3.main {
-        text-shadow: none;
-	background-color:#223059;
-	color:#D28F20;
+    text-shadow: none;
+	background-color:#d5eaff;
+	color:#333333;
 	font-weight: 400;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 }
 
 .block a{
-	color: #223059;
+	color:#333333;
 	font-weight:normal;
 }
 
 .block a:hover {
-	color: #D28F20;
+	color: #155abf;
 	text-decoration:none;
 }
 .block .header .block_action {
     padding-top: 2px;
 }
-
 hr {
     border-color: #838383;
 }
 .tree_item.branch {
-    color: #223059;	
+    color: #333333;	
 }
 .tree_item.branch :hover{
-    color: #D28F20;	
+    color: #155abf;	
     text-decoration:none;
 }
-
-/*-----------------------------------------------------------------------------------*/
-/*Front Page Course List*/
-#frontpage-course-list h2{
-    color: #223059;
-}
-
-/*.info > h3.name a{
-    color:  #223059;
-}*/
-
-.info > h3.name a:hover{
-    color:  #D28F20;
-}
-
 
 /*------------------------------------------------------------------------------------*/
 /* MAIN REGION */
 #page {
-	margin-top: 50px;      
+	margin-top: 50px;
 }
 @media (max-width: 979px) {
 	#page {
@@ -459,68 +408,6 @@ td {
 /* PANEL */
 .user-enroller-panel {
     z-index:10020;
-}
-
-/*Footer*/
-
-#bottom_bar{
-    position: relative;
-    top: 20px;
-    background-color: #384469;
-    height: 4px;
-}
-
-p.helplink{
-    width: 150px;
-    position:relative;
-    margin:0 auto;
-    clear:left;
-    height:auto;
-    z-index: 0;
-    text-align:center
-}
-
-.footnote{
-    color: #D28F20;
-   // width: 500px;
-    /*float: left;
-    position: relative;
-    top: -35px;*/
-}
-
-/*#page-footer .logininfo{
-    max-width: 100%;
-    padding-right: 500px;
-    /*position: relative;
-    left: -250px;
-}*/
-
-/*#page-footer .homelink{
-    max-width: 100%;
-    padding-right: 500px;
-    /*position: relative;
-    left: -250px;
-}*/
-
-#page-footer{
-    background: #223059;
-    background: -moz-linear-gradient(bottom,  #223059 60%, #000000  100%);
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(60%,#223059), color-stop(100%,#000000));
-    background: -webkit-linear-gradient(bottom,  #223059 60%,#000000 100%);
-    background: -o-linear-gradient(bottom,  #223059 60%,#000000 100%);
-    background: -ms-linear-gradient(bottom,  #223059 60%,#000000 100%);
-    background: linear-gradient(to top,  #223059 60%,#000000 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#223059', endColorstr='#000000',GradientType=0);
-}
-
-#page-footer a:hover{
-    color: #D28F20;
-}
-
-#common_links{
-    //float: right;
-    //width: 370px;
-    color: #D28F20;
 }
 
 /* Custom CSS Settings

@@ -1,8 +1,34 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-//global($OUTPUT,$PAGE);
-class theme_reca_core_renderer extends core_renderer {
-public function notification($message, $classes = 'notifyproblem') {
+/**
+ * Renderers to align Moodle's HTML with that expected by Bootstrap
+ *
+ * @package    theme_bootstrapbase
+ * @copyright  2012
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+class theme_bootstrapbase_core_renderer extends core_renderer {
+
+    /*
+     * This renders a notification message.
+     * Uses bootstrap compatible html.
+     */
+    public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
         $type = '';
 
@@ -83,8 +109,6 @@ public function notification($message, $classes = 'notifyproblem') {
         }
 
         $content = '<ul class="nav">';
-        //$content.='<li class=""><a class="homeitemlink" href="http://www.reca.ab.ca"><div class="homeicon"><img alt="'.get_string('home').'" title="'.get_string('home').'" src="'.$CFG->wwwroot.'/theme/reca/pix/home_icon.png"></div></a></li>';
-        $content.= '<li class="home_item"><a>Home</a></li>';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
@@ -115,8 +139,6 @@ public function notification($message, $classes = 'notifyproblem') {
             } else {
                 $url = '#cm_submenu_'.$submenucount;
             }
-            //$content .= html_writer::start_tag('a', array('href'=>'home', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>'home'));
-             //$content .= '</a>';
             $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
             $content .= $menunode->get_text();
             if ($level == 1) {
@@ -138,8 +160,6 @@ public function notification($message, $classes = 'notifyproblem') {
             }
             $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
         }
-                
-
         return $content;
     }
 
@@ -188,4 +208,3 @@ public function notification($message, $classes = 'notifyproblem') {
         }
     }
 }
-?>

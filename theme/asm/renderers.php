@@ -1,7 +1,7 @@
 <?php
 
 //global($OUTPUT,$PAGE);
-class theme_reca_core_renderer extends core_renderer {
+class theme_asm_core_renderer extends core_renderer {
 public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
         $type = '';
@@ -83,8 +83,7 @@ public function notification($message, $classes = 'notifyproblem') {
         }
 
         $content = '<ul class="nav">';
-        //$content.='<li class=""><a class="homeitemlink" href="http://www.reca.ab.ca"><div class="homeicon"><img alt="'.get_string('home').'" title="'.get_string('home').'" src="'.$CFG->wwwroot.'/theme/reca/pix/home_icon.png"></div></a></li>';
-        $content.= '<li class="home_item"><a>Home</a></li>';
+        $content.='<li class=""><a class="homeiconlink" href="http://www.asminternational.org"><div class="homeicon"><img alt="'.get_string('home').'" title="'.get_string('home').'" src="'.$CFG->wwwroot.'/theme/asm/pix/home_icon.png"></div></a></li>';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }

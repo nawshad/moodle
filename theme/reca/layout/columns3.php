@@ -68,13 +68,13 @@ echo $OUTPUT->doctype() ?>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <!--<div class="navbar topmenu">-->
+                    <div class="navbar topmenu">
                         <div class="container-fluid reca_custom_menu">
                             <div class="nav-collapse collapse">                                
                                 <?php echo $OUTPUT->custom_menu(); ?>
                             </div>
                         </div>
-                    <!--</div>-->
+                    </div>
                 <?php } ?>            
         </div>
     </nav>
@@ -109,19 +109,22 @@ echo $OUTPUT->doctype() ?>
         <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
     </div>
 
-    <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-        <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-        <?php
-        echo $html->footnote;
-        echo $OUTPUT->login_info();
-        echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>
-    </footer>
+    <div id ="page-footer-div">
+        <div id="bottom_bar"></div> 
+        <footer id="page-footer">
+            <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
+            <div id="common_links"><?php echo "<a href>Home</a> | <a href>Contact</a> | <a href>Links</a> | <a href>Careers</h> | <a href>Privacy</a> | <a href>Terms of Use</a>" ?></div>
+            <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
+            <?php
+            echo $html->footnote;
+            echo $OUTPUT->login_info();
+            echo $OUTPUT->home_link();
+            echo $OUTPUT->standard_footer_html();
+            ?>
+        </footer>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
+        <?php echo $OUTPUT->standard_end_of_body_html() ?>
+    </div>
+ </div>
 </body>
 </html>

@@ -16,52 +16,49 @@ include_once('globals.php');
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 // Get the HTML for the settings bits.
-$html = theme_reca_get_html_for_settings($OUTPUT, $PAGE);
+$html = theme_asm_get_html_for_settings($OUTPUT, $PAGE);
 
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
-$left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <!--<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">-->
+    <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-<header role="banner" class="navbar <?php echo $html->navbarclass ?>">
+
+<header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
         <div class="loginstripe">
             <div class="container-fluid top_stripe"><?php echo $OUTPUT->login_info() ?></div>
         </div>
-        <div class="container-fluid">
+        <div class="bluestripe"></div>
+        <div class="container-fluid logo_holder">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $global_logo; ?></a>
-            <?php if ($hascustommenu) { ?>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <?php } ?>             
+                <?php if ($hascustommenu) { ?>
+                    <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div class="navbar topmenu">
+                        <div class="container-fluid reca_custom_menu">
+                            <div class="nav-collapse collapse">                                
+                                <?php echo $OUTPUT->custom_menu(); ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>            
         </div>
     </nav>
-
-    <?php if ($hascustommenu) { ?>
-        <div class="navbar topmenu ">
-            <div class="container-fluid">
-                <div class="nav-collapse collapse">                                
-                    <?php echo $OUTPUT->custom_menu(); ?>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
-
 </header>
 
 <div id="page" class="container-fluid">
@@ -78,23 +75,16 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row-fluid">
-        <section id="region-main" class="span9<?php if ($left) { echo ' pull-right'; } ?>">
+        <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
         </section>
-        <?php
-        $classextra = '';
-        if ($left) {
-            $classextra = ' desktop-first-column';
-        }
-        echo $OUTPUT->blocks('side-pre', 'span3'.$classextra);
-        ?>
     </div>
 
-       <div id ="page-footer-div">
+    <div id ="page-footer-div">
         <div id="bottom_bar"></div> 
         <footer id="page-footer">
             <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
@@ -109,6 +99,7 @@ echo $OUTPUT->doctype() ?>
         </footer>
 
         <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
     </div>
 
 </div>
