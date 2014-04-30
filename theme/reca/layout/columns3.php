@@ -113,7 +113,7 @@ echo $OUTPUT->doctype() ?>
         <div id="bottom_bar"></div> 
         <footer id="page-footer">
             <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-            <div id="common_links"><?php echo "<a href>Home</a> | <a href>Contact</a> | <a href>Links</a> | <a href>Careers</h> | <a href>Privacy</a> | <a href>Terms of Use</a>" ?></div>
+            <div id="common_links"><?php echo "<a href>Home</a> | <a href>Contact</a> | <a href>Links</a> | <a href>Careers</a> | <a href>Privacy</a> | <a href>Terms of Use</a>" ?></div>
             <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
             <?php
             echo $html->footnote;
