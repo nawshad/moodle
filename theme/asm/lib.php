@@ -174,7 +174,7 @@ function asm_set_customcss($css, $customcss) {
 }
 
 
- function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+ /*function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -219,3 +219,4 @@ function asm_set_customcss($css, $customcss) {
 
         return $content;
     }
+*/

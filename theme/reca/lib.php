@@ -174,7 +174,7 @@ function reca_set_customcss($css, $customcss) {
 }
 
 
- function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+ /*function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -218,4 +218,4 @@ function reca_set_customcss($css, $customcss) {
                 $content.= '<li>Home</li>';
 
         return $content;
-    }
+    }*/
