@@ -1,0 +1,6 @@
+Web service template plugin for Moodle 2.X
+------------------------------------------
+
+To test:
+1- install the plugin in moodle/local/lambdaws_dynsim_save_grades/
+2- Read, setup and run moodle/local/lambdaws_dynsim_save_grades/client/client.php

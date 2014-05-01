@@ -23,19 +23,19 @@
 
 // We defined the web service functions to install.
 $functions = array(
-        'local_wstemplate_hello_world' => array(
-                'classname'   => 'local_wstemplate_external',
-                'methodname'  => 'hello_world',
-                'classpath'   => 'local/wstemplate/externallib.php',
-                'description' => 'Return Hello World FIRSTNAME. Can change the text (Hello World) sending a new text as parameter',
+        'local_ws_number_sum' => array(
+                'classname'   => 'local_ws_number_sum_external',
+                'methodname'  => 'number_sum',
+                'classpath'   => 'local/ws_number_sum/externallib.php',
+                'description' => 'Return sum of two number sent as a number_sum parameter',
                 'type'        => 'read',
         )
 );
 
 // We define the services to install as pre-build services. A pre-build service is not editable by administrator.
 $services = array(
-        'My service' => array(
-                'functions' => array ('local_wstemplate_hello_world'),
+        'Sum service' => array(
+                'functions' => array ('local_ws_number_sum'),
                 'restrictedusers' => 0,
                 'enabled'=>1,
         )

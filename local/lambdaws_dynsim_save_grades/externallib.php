@@ -16,35 +16,40 @@
 /**
  * External Web Service Template
  *
- * @package    localwstemplate
+ * @package    lambdaws_dynsim_save_grades
  * @copyright  2011 Moodle Pty Ltd (http://moodle.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 require_once($CFG->libdir . "/externallib.php");
 
-class local_wstemplate_external extends external_api {
+class local_lambdaws_dynsim_save_grades_external extends external_api {
 
     /**
      * Returns description of method parameters
      * @return external_function_parameters
      */
-    public static function hello_world_parameters() {
+    public static function lambdaws_dynsim_save_grades_parameters() {
         return new external_function_parameters(
-                array('welcomemessage' => new external_value(PARAM_TEXT, 'The welcome message. By default it is "Hello world,"', VALUE_DEFAULT, 'Hello world, '))
+                array('idnumber' => new external_value(PARAM_INT, 'idnumber', VALUE_DEFAULT, 0),
+                      'dynsimid' => new external_value(PARAM_INT, 'dynsimid', VALUE_DEFAULT, 0),
+                      'grade' => new external_value(PARAM_FLOAT, 'grade', VALUE_DEFAULT, 0.0),
+                      'timecompleted' => new external_value(PARAM_INT, 'timecompleted', VALUE_DEFAULT, 0),
+                      'description' => new external_value(PARAM_TEXT, 'description', VALUE_DEFAULT, 'Default')
+                    )
         );
     }
 
-    /**
-     * Returns welcome message
+  
+     /* Returns welcome message
      * @return string welcome message
      */
-    public static function hello_world($welcomemessage = 'Hello world, ') {
+    public static function lambdaws_dynsim_save_grades($idnumber, $dynsimid, $grade, $timecompleted, $description) {
         global $USER;
 
         //Parameter validation
         //REQUIRED
-        $params = self::validate_parameters(self::hello_world_parameters(),
-                array('welcomemessage' => $welcomemessage));
+        $params = self::validate_parameters(self::lambdaws_dynsim_save_grades_parameters(),
+                array('idnumber' =>$idnumber , 'dynsimid'=> $dynsimid, 'grade'=>$grade , 'timecompleted' => $timecompleted, 'description'=>$description));
 
         //Context validation
         //OPTIONAL but in most web service it should present
@@ -56,16 +61,17 @@ class local_wstemplate_external extends external_api {
         if (!has_capability('moodle/user:viewdetails', $context)) {
             throw new moodle_exception('cannotviewprofile');
         }
+        
 
-        return $params['welcomemessage'] . $USER->firstname ;;
+        return 'ID Number: '.$idnumber.' Dynsim ID: '.$dynsimid.' Grade: '.$grade.' Time Completed: '.$timecompleted.' description: '.$description;
     }
 
     /**
      * Returns description of method result value
      * @return external_description
      */
-    public static function hello_world_returns() {
-        return new external_value(PARAM_TEXT, 'The welcome message + user first name');
+    public static function lambdaws_dynsim_save_grades_returns() {
+        return new external_value(PARAM_TEXT, 'The sum of two numbers sent as parameter');
     }
 
 
