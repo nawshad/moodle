@@ -23,8 +23,8 @@
 
 /// SETUP - NEED TO BE CHANGED
 
-
-$domainname = 'localhost/moodle';
+require_once('../../../config.php');
+$domainname = $CFG->wwwroot;
 
 /// FUNCTION NAME
 $functionname = $_GET['wsfunction'];
