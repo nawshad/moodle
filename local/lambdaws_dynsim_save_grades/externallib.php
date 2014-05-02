@@ -63,7 +63,7 @@ class local_lambdaws_dynsim_save_grades_external extends external_api {
         }
         
 
-        return 'ID Number: '.$idnumber.' Dynsim ID: '.$dynsimid.' Grade: '.$grade.' Time Completed: '.$timecompleted.' description: '.$description;
+        return 'ID Number: '.$idnumber.' Dynsim ID: '.$dynsimid.' Grade: '.$grade.' Time Completed: '.$timecompleted.' Description: '.$description;
     }
 
     /**
