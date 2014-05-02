@@ -303,6 +303,11 @@ body {
 		background:none;
 	}
 }
+
+#page-mod-quiz-edit .questionbankwindow.block div.header {
+    padding: 0 0px;
+}
+
 /*.topmenu {
 	background: url([[pix:theme|menu_background]]) repeat-x #000000 ;
         color: #000000;
