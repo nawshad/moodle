@@ -71,9 +71,7 @@ class local_lambdaws_dynsim_save_grades_external extends external_api {
      * @return external_description
      */
     public static function lambdaws_dynsim_save_grades_returns() {
-        return new external_value(PARAM_TEXT, 'The sum of two numbers sent as parameter');
+        return new external_value(PARAM_TEXT, 'Show the params');
     }
-
-
 
 }

@@ -1,0 +1,192 @@
+<?php
+// File: config.html
+// Purpose: Creates the page for configuring Lambda SSO
+// By: lambdasolutions.net
+
+global $CFG, $OUTPUT;
+
+// The variable $config is automatically retrieved from the config table by moodle
+
+
+$ssonames = array('returnurl', 'redirecturl', 'logouturl', 'cookiename', 'cookiepath', 'cookiedomain', 'cookieremove', 'apiurl', 'apiattribute', 'apiprocessresult', 'auths', 'auths_list');
+
+foreach ($ssonames as $ssoname) {
+	if (!isset ($config->$ssoname)) {
+		$config->$ssoname = '';
+	}
+}
+
+$yesno = array( get_string('no'), get_string('yes') );
+
+?> 
+
+<style>
+input[type="text"] {
+	width: 95%!important;
+}
+</style>
+<table cellspacing="0" cellpadding="5" border="0">
+
+	<tr>
+	   <td >
+	        <h4><?php print_string('ssoinformation', 'auth_lambdasso') ?></h4>
+	   </td>
+	</tr>	
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('returnurllabel', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="returnurl" type="text" size="30" value="<?php echo $config->returnurl?>" /><br />
+	        <?php if (isset($err['returnurl'])) { echo $OUTPUT->error_text($err['returnurl']); } ?>
+	    </td>
+	    <td>
+	        <?php print_string('returnurldesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('redirecturllabel', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <?php echo html_writer::select($yesno, 'redirecturl', $config->redirecturl, false); ?>
+	    </td>
+	    <td>
+	        <?php print_string('redirecturldesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+
+
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('logouturllabel', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="logouturl" type="text" size="30" value="<?php echo $config->logouturl?>" /><br />
+	        <?php if (isset($err['logouturl'])) { echo $OUTPUT->error_text($err['logouturl']); } ?>
+	    </td>
+	    <td>
+	        <?php print_string('logouturldesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+
+
+	<tr>
+		<td/>
+	</tr>	
+	<tr>
+	   <td>
+	        <h4><?php print_string('cookieinformation', 'auth_lambdasso') ?></h4>
+	   </td>
+	</tr>
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('cookiename', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="cookiename" type="text" size="30" value="<?php echo $config->cookiename?>" /><br />
+	    </td>
+	    <td>
+	        <?php print_string('cookienamedesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('cookiepath', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="cookiepath" type="text" size="30" value="<?php echo $config->cookiepath?>" /><br />
+	    </td>
+	    <td>
+	        <?php print_string('cookiepathdesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('cookiedomain', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="cookiedomain" type="text" size="30" value="<?php echo $config->cookiedomain?>" /><br />
+	    </td>
+	    <td>
+	        <?php print_string('cookiedomaindesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>	
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('cookieremove', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <?php echo html_writer::select($yesno, 'cookieremove', $config->cookieremove, true); ?>
+	    </td>
+	    <td>
+	        <?php print_string('cookieremovedesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+	
+	<tr>
+		<td/>
+	</tr>	
+	<tr>
+	   <td>
+	        <h4><?php print_string('cookieapi', 'auth_lambdasso') ?></h4>
+	   </td>
+	</tr>
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('cookieapilabel', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="apiurl" type="text" size="30" value="<?php echo $config->apiurl?>" /><br />
+	    </td>
+	    <td>
+	        <?php print_string('cookieapiurldesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('cookieapiattribute', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <input name="apiattribute" type="text" size="30" value="<?php echo $config->apiattribute?>" /><br />
+	    </td>
+	    <td>
+	        <?php print_string('cookieapiattributedesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('apiprocessresultlabel', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <?php echo html_writer::select($yesno, 'apiprocessresult', $config->apiprocessresult, false); ?>
+	    </td>
+	    <td>
+	        <?php print_string('apiprocessresultdesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+
+
+	<tr>
+		<td/>
+	</tr>	
+	<tr>
+	   <td>
+	        <h4><?php print_string('authmetode', 'auth_lambdasso') ?></h4>
+	   </td>
+	</tr>
+	<tr valign="top" class="required">
+	    <td align="right"><?php print_string('authmetodelabel', 'auth_lambdasso') ?>:</td>
+	    <td>
+	        <?php
+	            $auth_list = get_plugin_list('auth');
+				$auth_options = array();
+				$auth_options_list = '';
+				foreach ($auth_list as $auth) {
+					$auth_name_array=explode("/", $auth);
+					$auth_name=count($auth_name_array)-1;
+					$auth_options[] = get_string('pluginname', "auth_{$auth_name_array[$auth_name]}");
+					$auth_options_list.= $auth_name_array[$auth_name].',';
+				}
+
+	            echo html_writer::select($auth_options, 'auths', $config->auths);	            
+	        ?>
+
+	        <input name="auths_list" type="hidden" size="30" value="<?php echo $auth_options_list ?>" /><br />
+
+	    </td>
+	    <td>
+	        <?php print_string('authmetodedesc', 'auth_lambdasso') ?>
+	    </td>
+	</tr>
+	
+</table>
